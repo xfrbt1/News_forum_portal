@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from news.views import home
+from main.views import home
 import authentication, news
 
 urlpatterns = [
@@ -8,6 +8,5 @@ urlpatterns = [
     path('', home, name='home'),
     # path('authentication/', include('authentication.urls')),
     # path('news/', include('news.urls')),
-
 
 ]

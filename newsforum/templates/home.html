@@ -1,16 +1,40 @@
+{% extends 'nav_bar.html' %}
+
+
+{% load static %}
+{% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'btstrp/css/bootstrap.min.css' %}">
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>forum</title>
+    <title>HOME</title>
 </head>
-<h1> HOME PAGE </h1>
-===================================================================
 
-===================================================================
+
+
 
 
 <body>
-<h1>hello</h1>
 
+<style>
+  .outer {
+    text-align: center;
+  }
+</style>
+
+<div class="outer"><h1>HOME</h1></div>
+
+<h3>Hello friend, it is my second web-project!
+</h3>
 </body>
+
+</html>
+
+
+{% endblock %}
 
