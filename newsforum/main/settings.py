@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'news.apps.NewsConfig',
-    'authentication.apps.AuthenticationConfig',
+    # 'news.apps.NewsConfig',
+    # 'authentication.apps.AuthenticationConfig',
+    'news',
+    'forum',
+
 
 ]
 

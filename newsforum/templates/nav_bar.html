@@ -41,10 +41,11 @@ body {
 <body>
 
 <div class="topnav">
-  <a href="">HOME</a>
-  <a href="/">NEWS</a>
-  <a href="/">FORUM</a>
-  <a href="/">ABOUT</a>
+  <a href="/">HOME</a>
+  <a href="{% url 'news' %}">NEWS</a>
+  <a href="{% url 'forum' %}">FORUM</a>
+  <a href="/about">ABOUT</a>
+  <a href="/admin">ADMIN</a>
 </div>
 
 <div style="padding-left:20px">

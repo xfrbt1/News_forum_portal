@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from news import views
+from forum import views
 
 urlpatterns = [
-    path('', views.news, name='news'),
+    path('', views.forum, name='forum'),
 
 ]
