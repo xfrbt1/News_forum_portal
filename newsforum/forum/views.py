@@ -4,3 +4,5 @@ from django.shortcuts import render, redirect
 
 def forum(request):
     return render(request, 'forum/forum_page.html')
+
+
