@@ -1,0 +1,56 @@
+{% extends 'nav_bar.html' %}
+
+
+{% load static %}
+{% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'btstrp/css/bootstrap.min.css' %}">
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION</title>
+</head>
+
+
+
+
+
+<body>
+
+<style>
+  .outer {
+    text-align: center;
+  }
+</style>
+
+<style>
+   button {
+    background: #7B68EE;
+    color: #fff;
+    margin: 0 auto;
+    display : block;
+</style>
+
+
+<div class="outer"><h1>REGISTRATION</h1></div>
+<div class="container mt-3">
+<div class="card mb-3">
+<form method="post">
+    {% csrf_token %}
+    <div>{{form}}</div>
+
+    <button  type="submit">REGISTER</button>
+
+</form>
+</div>
+</div>
+</body>
+
+</html>
+
+
+{% endblock %}

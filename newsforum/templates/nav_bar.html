@@ -45,6 +45,15 @@ body {
   <a href="{% url 'news' %}">NEWS</a>
   <a href="{% url 'forum' %}">FORUM</a>
   <a href="/about">ABOUT</a>
+  <a href="{% url 'auth_page' %}">
+         {% if user.is_authenticated %}
+             {{user.username.upper}}
+         {% else %}
+             LOG IN
+         {% endif %}
+  </a>
+
+    <a href="{% url 'logout' %}">LOG OUT</a>
   <a href="/admin">ADMIN</a>
 </div>
 
