@@ -27,7 +27,32 @@
   }
 </style>
 
+<style>
+   button {
+    background: #7B68EE;
+    color: #fff;
+    margin: 0 auto;
+    display : block;
+</style>
+
+<style>
+   a {
+    text-decoration: none;
+   }
+  </style>
+
 <div class="outer"><h1>FORUM</h1></div>
+
+<div class="outer">
+<a href="{% url 'post_create' %}">
+        <button>
+            WRITE POST
+        </button>
+</a>
+</div>
+
+
+
 
 
 <div class="container mt-3">
@@ -38,20 +63,23 @@
 
         <div class="card-header"><h2>Title: {{ item.title }}</h2></div>
         <div class="card-body">
-        <div class="media">
-                  {% if item.image %}
-                  <img src="{{ item.image.url }}" height="200" width="300" class="mr-3">
-                  {% else %}
-                  <img src="" height="200" width="300">
-                  {% endif %}
-        </div>
         <div class="media-body">
             <p class="card-content">{{ item.content }}</div>
         <div class="card-footer">Author:<h5> {{ item.author }}</h5>
         Category: <h5>{{ item.category }}</h5>
         Time: <h5>{{ item.publish_time }}</h5>
         </div>
-<!--    <div><button class="right">READ MORE</button></div>-->
+
+<div class="outer">
+    <a href="{% url 'post_detail' item.pk %}">
+        <button>
+            READ COMMENTS
+        </button>
+    </a>
+</div>
+
+
+
     </div>
 
 </div>

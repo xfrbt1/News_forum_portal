@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>post_creation</title>
+    <title>POST CREATION</title>
 </head>
 <body>
 
@@ -29,15 +29,17 @@
     display : block;
 </style>
 
-<div class="outer"><h1>post_creation</h1></div>
+<div class="outer"><h1>POST CREATION</h1></div>
 
 
 
-<form method="post">
+{{ form.non_field.errors }}
+<form action="{% url 'post_create' %}" method="post">
     {% csrf_token %}
-    {{form}}
-    <button  type="submit">CREATE</button>
+    {{ form.as_p }}
 
+
+    <button  type="submit" >SHARE POST</button>
 
 
 </form>
