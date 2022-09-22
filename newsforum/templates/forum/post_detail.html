@@ -37,45 +37,42 @@
 {% csrf_token %}
 <div class="card mb-3">
 
-        <div class="card-header"><h2>Title: {{ object.title }}</h2></div>
+        <div class="card-header"><h2>Title: {{ post.title }}</h2></div>
         <div class="card-body">
         <div class="media-body">
-            <p class="card-content">{{ object.content }}</div>
-        <div class="card-footer">Author:<h5> {{ object.author }}</h5>
-        Category: <h5>{{ object.category }}</h5>
-        Time: <h5>{{ object.publish_time }}</h5>
+            <p class="card-content">{{ post.content }}</div>
+        <div class="card-footer">Author:<h5> {{ post.author }}</h5>
+        Category: <h5>{{ post.category }}</h5>
+        Time: <h5>{{ post.publish_time }}</h5>
         </div>
-<!--    <div><button class="right">READ MORE</button></div>-->
+
     </div>
 
 </div>
+<div class="outer"><h2>COMMENTS:</h2></div>
 
-{% for comment in comments %}
-<div class="comment">
-    comment by: {{ comment.author }}
-    time: {{ comment.publish_time }}
-    content: {{ comment.content }}
-    </div>
-{% empty %}
-    <p> THERE ARE NO COMMENTS YET.</p>
+
+<div class="container">
+{% for comment in post_comments %}
+<div class="card mb-3">
+    <div class="card-header"><h6>author: {{ comment.author }}</h6></div>
+    <p class="card-content">{{ comment.content }}
+     <div class="card-footer">time: {{ comment.publish_time }}</div>
+
+
+</div>
 {% endfor %}
+</div>
 
 
+<div class="outer"><h1>ADD COMMENT</h1></div>
 
-
-{% if new_comment %}
-<h1>YOUR COMMENT HAS BEEN ADDED</h1>
-{% else %}
 {{ comment_form.non_field.errors }}
-<form action="." method="post">
+<form >
     {% csrf_token %}
     {{ comment_form.as_p }}
-
-
-    <button  type="submit" >SHARE POST</button>
-{% endif %}
-
-
+    <button  type="submit" >SHARE COMMENT</button>
+</form>
 
 
 

@@ -43,16 +43,7 @@
 
 <div class="outer"><h1>FORUM</h1></div>
 
-<div class="outer">
-<a href="{% url 'post_create' %}">
-        <button>
-            WRITE POST
-        </button>
-</a>
-</div>
-
-
-
+<div><a href="{% url 'post_create' %}"><button class="right">WRITE POST</button></a></div>
 
 
 <div class="container mt-3">
@@ -70,15 +61,8 @@
         Time: <h5>{{ item.publish_time }}</h5>
         </div>
 
-<div class="outer">
-    <a href="{% url 'post_detail' item.pk %}">
-        <button>
-            READ COMMENTS
-        </button>
-    </a>
-</div>
 
-
+    <div><a href="{% url 'post_detail' item.pk %}"><button class="right">READ MORE</button></a></div>
 
     </div>
 
@@ -87,8 +71,6 @@
 
 {% endfor %}
 </div>
-
-
 
 
 

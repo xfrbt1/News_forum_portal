@@ -1,3 +1,4 @@
+import uuid
 from django.contrib.auth import get_user_model
 from django.db import models
 
@@ -19,6 +20,7 @@ class Post(models.Model):
     content = models.TextField(max_length=1500)
     author = models.CharField(max_length=100)
     publish_time = models.DateTimeField(auto_now=False, auto_now_add=True)
+
 
 
     def __str__(self):

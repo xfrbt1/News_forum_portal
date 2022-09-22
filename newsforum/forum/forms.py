@@ -8,7 +8,7 @@ class PostCreateForm(forms.Form):
     category = forms.ModelChoiceField(empty_label=None, queryset=Category.objects.all(), widget=forms.Select(attrs={"class":"form-control"}))
 
 
-class CommentForm(forms.ModelForm):
+class CommentCreateForm(forms.Form):
 
     content = forms.CharField(widget=forms.Textarea(attrs={"class": "form-control", 'rows': 5}))
 
