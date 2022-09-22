@@ -34,8 +34,8 @@
 
 
 
-{% csrf_token %}
-<div class="card mb-3">
+<div class="container mt-3">
+<div class="card">
 
         <div class="card-header"><h2>Title: {{ post.title }}</h2></div>
         <div class="card-body">
@@ -47,8 +47,9 @@
         </div>
 
     </div>
-
 </div>
+</div>
+
 <div class="outer"><h2>COMMENTS:</h2></div>
 
 
@@ -65,10 +66,10 @@
 </div>
 
 
-<div class="outer"><h1>ADD COMMENT</h1></div>
+<div class="outer"><h2>ADD COMMENT</h2></div>
 
 {{ comment_form.non_field.errors }}
-<form >
+<form method="post" action="{% url 'post_detail' post.pk %}">
     {% csrf_token %}
     {{ comment_form.as_p }}
     <button  type="submit" >SHARE COMMENT</button>
