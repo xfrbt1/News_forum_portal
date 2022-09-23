@@ -54,3 +54,5 @@ def post_create(request):
 
 
 
+def helloworld():
+    return 'hello world'
